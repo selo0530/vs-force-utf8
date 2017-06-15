@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="1B6E55C6-3B58-451C-8D94-6FCAA42F19BB" Version="1.0.0" Language="en-US" Publisher="zx" />
-    <DisplayName>ForceUTF8</DisplayName>
+    <Identity Id="1B6E55C6-3B58-451C-8D94-6FCAA42F19BB" Version="0.0.1" Language="en-US" Publisher="zx" />
+    <DisplayName>ForceUTF8(No BOM)</DisplayName>
     <Description xml:space="preserve">Force saving files with encoding other than UTF-8 and have no BOM in UTF-8 encoding (no BOM will be added).</Description>
   </Metadata>
   <Installation >

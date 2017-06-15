@@ -72,10 +72,10 @@ namespace VILICVANE.ForceUTF8
 
             var dte = GetService(typeof(DTE)) as DTE2;
             documentEvents = dte.Events.DocumentEvents;
-            documentEvents.DocumentSaved += documentEvents_DocumentSaved;
+            documentEvents.DocumentSaved += DocumentEvents_DocumentSaved;
         }
 
-        void documentEvents_DocumentSaved(Document document) {
+        void DocumentEvents_DocumentSaved(Document document) {
             if (document.Kind != "{8E7B96A8-E33D-11D0-A6D5-00C04FB67F6A}") {
                 // then it's not a text file
                 return;
@@ -83,29 +83,45 @@ namespace VILICVANE.ForceUTF8
 
             var path = document.FullName;
 
-            var stream = new FileStream(path, FileMode.Open);
-            var reader = new StreamReader(stream, Encoding.Default, true);
-            reader.Read();
+            try
+            {
+                var stream = new FileStream(path, FileMode.Open);
+                var reader = new StreamReader(stream, Encoding.Default, true);
+                reader.Read();
 
-            if (reader.CurrentEncoding != Encoding.Default) {
-                stream.Close();
-                return;
+                var preambleBytes = reader.CurrentEncoding.GetPreamble();
+                if (preambleBytes.Length == 0 &&
+                    reader.CurrentEncoding.EncodingName == Encoding.UTF8.EncodingName)
+                {
+                    stream.Close();
+                    return;
+                }
+
+                string text;
+
+                try
+                {
+                    stream.Position = 0;
+                    reader = new StreamReader(stream, new UTF8Encoding(false, true));
+                    text = reader.ReadToEnd();
+                    stream.Close();
+                    File.WriteAllText(path, text, new UTF8Encoding(false));
+                    Output.Info($"Already convert file '{path}' encoding to utf-8 no BOM.");
+                }
+                catch (DecoderFallbackException)
+                {
+                    stream.Position = 0;
+                    reader = new StreamReader(stream, Encoding.Default);
+                    text = reader.ReadToEnd();
+                    stream.Close();
+                    File.WriteAllText(path, text, new UTF8Encoding(false));
+                    Output.Info($"Already convert file '{path}' encoding to utf-8 no BOM.");
+                }
+
             }
-
-            string text;
-
-            try {
-                stream.Position = 0;
-                reader = new StreamReader(stream, new UTF8Encoding(false, true));
-                reader.ReadToEnd();
-                stream.Close();
-            }
-            catch (DecoderFallbackException) {
-                stream.Position = 0;
-                reader = new StreamReader(stream, Encoding.Default);
-                text = reader.ReadToEnd();
-                stream.Close();
-                File.WriteAllText(path, text, new UTF8Encoding(false));
+            catch (Exception e)
+            {
+                Output.Error($"Exception occured when converting file '{path}' encoding to utf-8 no BOM:\n{e.ToString()}");
             }
         }
         #endregion

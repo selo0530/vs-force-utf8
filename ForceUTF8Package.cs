@@ -1,17 +1,18 @@
 ﻿using System;
+using System.ComponentModel.Design;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Runtime.InteropServices;
-using System.ComponentModel.Design;
-using Microsoft.Win32;
 using Microsoft.VisualStudio;
-using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudio.OLE.Interop;
 using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudio.Shell.Interop;
+using Microsoft.Win32;
 using EnvDTE;
 using EnvDTE80;
-using System.Text;
 using System.IO;
+using System.Text;
 
 namespace VILICVANE.ForceUTF8
 {
@@ -32,9 +33,14 @@ namespace VILICVANE.ForceUTF8
     // in the Help/About dialog of Visual Studio.
     [InstalledProductRegistration("#110", "#112", "1.0", IconResourceID = 400)]
     [ProvideAutoLoad(UIContextGuids80.SolutionExists)]
-    [Guid(GuidList.guidForceUTF8PkgString)]
+    [Guid(ForceUTF8Package.PackageGuidString)]
     public sealed class ForceUTF8Package : Package
     {
+        /// <summary>
+        /// ForceUTF8Package GUID string.
+        /// </summary>
+        public const string PackageGuidString = "d5ca34f2-6bde-4b84-b853-39c003dbda4d";
+
         /// <summary>
         /// Default constructor of the package.
         /// Inside this method you can place any initialization code that does not require 

@@ -39,7 +39,7 @@ namespace VILICVANE.ForceUTF8
         /// <summary>
         /// ForceUTF8Package GUID string.
         /// </summary>
-        public const string PackageGuidString = "d5ca34f2-6bde-4b84-b853-39c003dbda4d";
+        public const string PackageGuidString = "1B6E55C6-3B58-451C-8D94-6FCAA42F19BB";
 
         /// <summary>
         /// Default constructor of the package.

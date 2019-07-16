@@ -1,16 +1,13 @@
-# Force UTF8 Extension for Visual Studio (no BOM)
+# Force UTF-8 Extension for Visual Studio (no BOM)
 
+Forcibly saves all files in UTF-8 (No BOM) encoding.
 
-## vs 2013/2015 version
+## Visual Studio 2019 version
 
-fork from https://github.com/vilic/vs-force-utf8.git
+fork from https://github.com/codecopy/vs-force-utf8
 
-for support Support Visual Studio 2013/2015
+for support Visual Studio 2019
 
-Download here: https://visualstudiogallery.msdn.microsoft.com/222add7a-54a6-4fdd-b6f1-5d95cc596b42
-
-## vs 2017 with BOM version
-
-modify to support vs2017 ,referenced to https://github.com/jz5/vs-force-utf8-2017.git (with BOM)
+Download here: 
 
 MIT License

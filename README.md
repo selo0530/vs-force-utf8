@@ -8,6 +8,6 @@ fork from https://github.com/codecopy/vs-force-utf8
 
 for support Visual Studio 2019
 
-Download here: 
+Download here: https://marketplace.visualstudio.com/items?itemName=1ndrew100.forceUTF8NoBOM
 
 MIT License

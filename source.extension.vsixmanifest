@@ -1,23 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
-  <Metadata>
-    <Identity Id="1B6E55C6-3B58-451C-8D94-6FCAA42F19BB" Version="0.0.2" Language="en-US" Publisher="zx" />
-    <DisplayName>ForceUTF8(No BOM)</DisplayName>
-    <Description xml:space="preserve">Force saving files with encoding other than UTF-8 and have no BOM in UTF-8 encoding (no BOM will be added).</Description>
-  </Metadata>
-  <Installation >
-    <InstallationTarget Version="[15.0]" Id="Microsoft.VisualStudio.Community" />
-    <InstallationTarget Version="[15.0]" Id="Microsoft.VisualStudio.Pro" />
-    <InstallationTarget Version="[15.0]" Id="Microsoft.VisualStudio.Enterprise" />
-  </Installation>
-  <Dependencies>
-    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
-    <Dependency Id="Microsoft.VisualStudio.MPF.15.0" DisplayName="Visual Studio MPF 15.0" d:Source="Installed" Version="[15.0]" />
-  </Dependencies>
-  <Prerequisites>
-    <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,16.0)" DisplayName="Visual Studio core editor" />
-  </Prerequisites>
-  <Assets>
-    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
-  </Assets>
+    <Metadata>
+        <Identity Id="9c0cad96-afa3-47a4-9090-12bb64f4d8b3" Version="0.0.3" Language="en-US" Publisher="1ndrew100" />
+        <DisplayName>Force UTF-8 (No BOM)</DisplayName>
+        <Description xml:space="preserve">Forcibly saves all files in UTF-8 (No BOM) encoding.</Description>
+        <MoreInfo>https://github.com/1ndrew100/vs-force-utf8</MoreInfo>
+    </Metadata>
+    <Installation >
+        <InstallationTarget Version="[15.0, 17.0)" Id="Microsoft.VisualStudio.Community" />
+        <InstallationTarget Version="[15.0, 17.0)" Id="Microsoft.VisualStudio.Pro" />
+        <InstallationTarget Version="[15.0, 17.0)" Id="Microsoft.VisualStudio.Enterprise" />
+    </Installation>
+    <Dependencies>
+        <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+        <Dependency Id="Microsoft.VisualStudio.MPF.15.0" DisplayName="Visual Studio MPF 15.0" d:Source="Installed" Version="[15.0]" />
+    </Dependencies>
+    <Prerequisites>
+        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,17.0)" DisplayName="Visual Studio core editor" />
+    </Prerequisites>
+    <Assets>
+        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+    </Assets>
 </PackageManifest>

@@ -28,18 +28,18 @@ namespace VILICVANE.ForceUTF8
     /// </summary>
     // This attribute tells the PkgDef creation utility (CreatePkgDef.exe) that this class is
     // a package.
-    [PackageRegistration(UseManagedResourcesOnly = true)]
+    [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
     // This attribute is used to register the information needed to show this package
     // in the Help/About dialog of Visual Studio.
     [InstalledProductRegistration("#110", "#112", "1.0", IconResourceID = 400)]
-    [ProvideAutoLoad(UIContextGuids80.SolutionExists)]
+    [ProvideAutoLoad(UIContextGuids80.SolutionExists, PackageAutoLoadFlags.BackgroundLoad)]
     [Guid(ForceUTF8Package.PackageGuidString)]
     public sealed class ForceUTF8Package : Package
     {
         /// <summary>
         /// ForceUTF8Package GUID string.
         /// </summary>
-        public const string PackageGuidString = "1B6E55C6-3B58-451C-8D94-6FCAA42F19BB";
+        public const string PackageGuidString = "9c0cad96-afa3-47a4-9090-12bb64f4d8b3";
 
         /// <summary>
         /// Default constructor of the package.

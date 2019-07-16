@@ -25,7 +25,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>VILICVANE.ForceUTF8</RootNamespace>
-    <AssemblyName>ForceUTF8%28NoBOM%29</AssemblyName>
+    <AssemblyName>Force UTF-8 %28No BOM%29</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <GeneratePkgDefFile>true</GeneratePkgDefFile>
     <IncludeAssemblyInVSIXContainer>true</IncludeAssemblyInVSIXContainer>

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.ComponentModel.Design;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
@@ -22,8 +22,8 @@ namespace VILICVANE.ForceUTF8
     /// The minimum requirement for a class to be considered a valid package for Visual Studio
     /// is to implement the IVsPackage interface and register itself with the shell.
     /// This package uses the helper classes defined inside the Managed Package Framework (MPF)
-    /// to do it: it derives from the Package class that provides the implementation of the 
-    /// IVsPackage interface and uses the registration attributes defined in the framework to 
+    /// to do it: it derives from the Package class that provides the implementation of the
+    /// IVsPackage interface and uses the registration attributes defined in the framework to
     /// register itself and its components with the shell.
     /// </summary>
     // This attribute tells the PkgDef creation utility (CreatePkgDef.exe) that this class is
@@ -39,13 +39,13 @@ namespace VILICVANE.ForceUTF8
         /// <summary>
         /// ForceUTF8Package GUID string.
         /// </summary>
-        public const string PackageGuidString = "9c0cad96-afa3-47a4-9090-12bb64f4d8b3";
+        public const string PackageGuidString = "67DCD205-770F-43B2-B609-A8BCBCC6641B";
 
         /// <summary>
         /// Default constructor of the package.
-        /// Inside this method you can place any initialization code that does not require 
-        /// any Visual Studio service because at this point the package object is created but 
-        /// not sited yet inside Visual Studio environment. The place to do all the other 
+        /// Inside this method you can place any initialization code that does not require
+        /// any Visual Studio service because at this point the package object is created but
+        /// not sited yet inside Visual Studio environment. The place to do all the other
         /// initialization is the Initialize method.
         /// </summary>
         public ForceUTF8Package()
